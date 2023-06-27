@@ -40,7 +40,7 @@ public class MailServiceImpl implements MailService {
      */
     @Override
     public boolean send(String to, String subject, String content) {
-        logger.info("## 准备发简单邮件 ##");
+        logger.info("## 准备发简单邮件给{} ##",to);
         SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
         //发送邮件来源
         simpleMailMessage.setFrom(mailProperties.getUsername());
@@ -70,7 +70,7 @@ public class MailServiceImpl implements MailService {
      */
     @Override
     public boolean sendWithHtml(String to, String subject, String html) {
-        logger.info("## 准备发html邮件 ##");
+        logger.info("## 准备发html邮件给{} ##",to);
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
         MimeMessageHelper mimeMessageHelper = null;
         try {
@@ -104,7 +104,7 @@ public class MailServiceImpl implements MailService {
      */
     @Override
     public boolean sendWithImageHtml(String to, String subject,String html, String[] cids, String[] filePaths) {
-        logger.info("## 准备发HtmlWithImage邮件 ##");
+        logger.info("## 准备发HtmlWithImage邮件给{} ##",to);
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
         MimeMessageHelper mimeMessageHelper = null;
 
@@ -140,7 +140,7 @@ public class MailServiceImpl implements MailService {
 
     @Override
     public boolean sendWithWithEnclosure(String to, String subject, String content, String[] filePaths) {
-        logger.info("## 准备发HtmlWithEnclosure邮件 ##");
+        logger.info("## 准备发HtmlWithEnclosure邮件给{} ##",to);
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
         MimeMessageHelper mimeMessageHelper = null;
         try {

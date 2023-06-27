@@ -53,7 +53,8 @@ class MymailApplicationTests {
      */
     @Test
     void sendHtmlWithImage(){
-        String to = "j2568095536@Gmail.com";
+//        String to = "j2568095536@Gmail.com";
+        String to = "2313939051@qq.com";
         String subject = "html,liutong";
         String html = "<html><body>" +
                 "<h1>你个小黑子</h1>" +
@@ -65,7 +66,7 @@ class MymailApplicationTests {
         };
         //文件路径
         String[] filePaths = new String[]{
-                "C:\\Users\\sxq\\Pictures\\Camera Roll\\heizi.jpg"
+                "src/main/resources/static/早.gif"
         };
         boolean flag = mailService.sendWithImageHtml(to,subject,html,cids,filePaths);
         if(flag == false){
